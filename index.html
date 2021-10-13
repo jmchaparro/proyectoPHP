@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <!--para que los buscadores no indexen la pagina ya que es una practica-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Proyecto ciclo 3</title>
+    <script>
+        window.onload = function() {
+            var fechahoy = new Date(); //Fecha actual
+            document.getElementById('fecha').value = fechahoy;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <img src="img/logo.png" />
+    </header>
+    <main>
+        <section id="section1" class="section1">
+            <h1>
+                Bienvenidos al mejor sitio de asesorias
+            </h1>
+        </section>
+        <section id="section2" class="section2">
+            <h1>Áreas de Práctica</h1>
+            <div class="grilla">
+                <a href="#"><img src="img/s3.svg" alt=""></a>
+                <h4>Consultoría Financiera</h4>
+            </div>
+            <div class="grilla">
+                <a href="#"><img src="img/s9.svg" alt=""></a>
+                <h4>Consultoría Juridica</h4>
+            </div>
+            <div class="grilla">
+                <a href="#"><img src="img/s5.svg" alt=""></a>
+                <h4>Consultoría Contable</h4>
+            </div>
+            <div class="grilla">
+                <a href="#"><img src="img/s7.svg" alt=""></a>
+                <h4>Consultoría Informatica</h4>
+            </div>
+            <div class="grilla">
+                <a href="#"><img src="img/s2.svg" alt=""></a>
+                <h4>Consultoría Personal</h4>
+            </div>
+        </section>
+        <section id="section3" class="section3">
+            <h1>Nuestra Empresa</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia, perspiciatis in expedita minima asperiores mollitia dolores ut molestiae necessitatibus, quaerat veniam maxime. Blanditiis quis porro enim expedita laboriosam? Quas!</p>
+
+        </section>
+        <section id="section4" class="section4">
+            <div class="asesorias">
+                <div class="asesoriasizq"><img src="img/asesorias.jpg"> </div>
+                <div class="asesoriasder">
+                    <form id="formulario" name="formulario">
+                        <label>Nombre:</label>
+                        <input id="nombre" name="nombre">
+                        <label>Telefono:</label>
+                        <input id="telefono" name="telefono">
+                        <label>Correo:</label>
+                        <input id="correo" name="correo">
+                        <label>Tipo de asesoria:</label>
+                        <select id="consultoria" name="consultoria">
+                            <option value="financiera">Financiera</option>
+                            <option value="juridica">Juridica</option>
+                            <option value="contable">Contable</option>
+                            <option value="informatica">Informatica</option>
+                            <option value="personal">Personal</option>
+                        </select>
+                        <label>Fecha:</label>
+                        <input id="fecha" name="fecha" type="date" min="2021-10-01" max="2021-12-31" value="">
+                        <input type="button" name="consulta" value="Consultar" onclick="consultar()">
+                        <div id="resultado"></div>
+                    </form>
+                    <div id="resultadoproceso"></div>
+                </div>
+            </div>
+
+        </section>
+        <section id="section5" class="section5">
+            <h1>Nuestros Asesores</h1>
+            <div class="grilla">
+                <a href="#"><img src="img/t1.png" alt=""></a>
+                <h4>Asesor 1</h4>
+            </div>
+            <div class="grilla">
+                <a href="#"><img src="img/t1.png" alt=""></a>
+                <h4>Asesor 2</h4>
+            </div>
+            <div class="grilla">
+                <a href="#"><img src="img/t1.png" alt=""></a>
+                <h4>Asesor 3</h4>
+            </div>
+            <div class="grilla">
+                <a href="#"><img src="img/t1.png" alt=""></a>
+                <h4>Asesor 4</h4>
+            </div>
+            <div class="grilla">
+                <a href="#"><img src="img/t1.png" alt=""></a>
+                <h4>Asesor 5</h4>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="f1"><img src="img/logo.png" /></div>
+        <div class="f2">direccion - telefono etc...</div>
+        <div class="f3">google maps</div>
+
+    </footer>
+</body>
+
+</html>
+<script type="text/javascript">
+    function consultar() {
+        $.ajax({
+            type: "POST",
+            url: "agenda.php",
+            data: $("#formulario").serialize(),
+            success: function(r) {
+                $('#resultado').html(r);
+            }
+        });
+    }
+
+    function proceso() {
+        $.ajax({
+            type: "POST",
+            url: "proceso.php",
+            data: $("#formulario").serialize(),
+            success: function(r) {
+                $('#resultadoproceso').html(r);
+            }
+        });
+    }
+</script>
