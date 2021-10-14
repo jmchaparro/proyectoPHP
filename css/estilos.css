@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+}
+
+.section1 {
+    background-image: url(../img/fondosect1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 80px 0;
+    color: aliceblue;
+    text-align: center;
+}
+
+.section2 {
+    text-align: center;
+    overflow: hidden;
+}
+
+.section3 {
+    text-align: center;
+    background-color: rgb(41, 5, 124);
+    padding: 50px 10%;
+    color: aliceblue;
+}
+
+.section4 {
+    text-align: center;
+    overflow: hidden;
+}
+
+.section5 {
+    text-align: center;
+    background-color: rgb(41, 5, 124);
+    padding: 50px 10%;
+    color: aliceblue;
+    overflow: hidden;
+}
+
+.asesorias {
+    width: 100%;
+}
+
+.asesoriasizq {
+    width: 50%;
+    height: auto;
+    float: left;
+}
+
+.asesoriasizq img {
+    width: 100%;
+    height: auto;
+}
+
+.asesoriasder {
+    width: 50%;
+    float: right;
+    text-align: center;
+}
+
+.grilla {
+    width: 20%;
+    text-align: center;
+    float: left;
+}
+
+.grilla img {
+    width: 70%;
+}
+
+.f1 {
+    width: 20%;
+    float: left;
+}
+
+.f2 {
+    width: 30%;
+    float: left;
+}
+
+.f3 {
+    width: 50%;
+    float: left;
+}
+
+.consultas {
+    width: 100%;
+}
+
+.consultasizq {
+    width: 50%;
+    height: auto;
+    float: left;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.consultasder {
+    width: 50%;
+    height: auto;
+    float: right;
+    text-align: center;
+    padding: 100px 0;
+}
