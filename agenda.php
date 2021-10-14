@@ -1,6 +1,6 @@
 <?php 
 date_default_timezone_set('America/Bogota');
-$conexion=mysqli_connect('localhost','root','agendador.5','asesorias');
+include 'conecta.php';
 $tipoconsulta=$_POST['consultoria'];
 $lafecha=$_POST['fecha'];
 $sql="SELECT * from $tipoconsulta where estado = 0 and fecha = '$lafecha'";
