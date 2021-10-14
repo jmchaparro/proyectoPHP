@@ -67,19 +67,33 @@ body {
     width: 70%;
 }
 
+.pie {
+    background-color: #f1f1f3;
+    overflow: hidden;
+}
+
 .f1 {
     width: 20%;
     float: left;
+    text-align: center;
+    padding-top: 50px;
 }
 
 .f2 {
-    width: 30%;
+    width: 40%;
     float: left;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 50px;
 }
 
 .f3 {
-    width: 50%;
+    width: 40%;
     float: left;
+}
+
+.f3 img {
+    width: 100%;
 }
 
 .consultas {
@@ -100,4 +114,23 @@ body {
     float: right;
     text-align: center;
     padding: 100px 0;
+}
+.bann {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f1f1f3;
+}
+
+.bannizq {
+    width: 30%;
+    height: auto;
+    float: left;
+    text-align: center;
+}
+
+.bannder {
+    width: 70%;
+    height: auto;
+    float: right;
+    text-align: center;
 }
